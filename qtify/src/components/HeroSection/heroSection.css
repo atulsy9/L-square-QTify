@@ -1,0 +1,13 @@
+.heroSection {
+  height: 270px;
+  display: flex;
+  background-color: var(--css-black);
+  align-items: center;
+  justify-content: center;
+}
+.textContent {
+  color: var(--css-white);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+}
