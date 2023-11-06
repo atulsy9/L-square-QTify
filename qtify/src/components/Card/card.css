@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 159px;
+  height: 232px;
+  background-color: black;
+}
+.card-innerCard {
+  background-color: var(--css-white);
+  height: 35px;
+  border-radius: 0 0 10px 10px;
+}
+
+.card-img {
+  width: 159px;
+  height: 170px;
+  border-radius: 10px 10px 0 0;
+}
+
+.followerCount {
+  width: 71px;
+  height: 23px;
+  border-radius: 10px;
+  background-color: var(--css-black);
+  color: var(--css-white);
+  font-size: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px 4px 8px;
+  margin: 6px;
+}
