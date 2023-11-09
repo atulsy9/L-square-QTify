@@ -1,0 +1,31 @@
+.albumGrid {
+  background-color: var(--css-black);
+  padding: 32px;
+}
+
+.gridHeader {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-bottom: 18px;
+}
+.gridHeader p {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--css-white);
+}
+
+.gridHeader div {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--css-primary);
+  cursor: pointer;
+}
+
+.card-component {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 41px;
+}

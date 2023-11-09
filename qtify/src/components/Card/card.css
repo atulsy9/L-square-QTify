@@ -5,7 +5,6 @@
   flex-direction: column;
   width: 159px;
   height: 232px;
-  background-color: black;
 }
 .card-innerCard {
   background-color: var(--css-white);
@@ -17,6 +16,7 @@
   width: 159px;
   height: 170px;
   border-radius: 10px 10px 0 0;
+  object-fit: cover;
 }
 
 .followerCount {
@@ -33,4 +33,12 @@
   align-items: center;
   padding: 4px 8px 4px 8px;
   margin: 6px;
+}
+.title {
+  color: var(--css-white);
+  font-size: 14px;
+  font-family: Poppins;
+  font-weight: 400;
+  height: 21px;
+  margin-top: 6px;
 }
