@@ -20,7 +20,6 @@ export default ({ data, id }) => {
           nextEl: ".left-arrow" + id,
           prevEl: ".right-arrow" + id,
         }}
-        loop={true}
         virtual
       >
         {data.map((cardData) => (
