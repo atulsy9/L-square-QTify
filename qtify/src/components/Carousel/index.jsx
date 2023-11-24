@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 import Card from "../Card";
 
 /* eslint-disable import/no-anonymous-default-export */
-export default ({ data, id }) => {
+export default ({ data, id, view }) => {
   return (
     <div className="carousel-section">
       <Swiper
@@ -24,11 +24,7 @@ export default ({ data, id }) => {
       >
         {data.map((cardData) => (
           <SwiperSlide key={cardData.id}>
-            <Card
-              imgsrc={cardData.image}
-              follows={cardData.follows}
-              title={cardData.title}
-            />
+            <Card data={cardData} view={view} />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -1,6 +1,7 @@
 .albumGrid {
   background-color: var(--css-black);
   padding: 32px;
+  border-bottom: 1px solid var(--css-primary);
 }
 
 .gridHeader {

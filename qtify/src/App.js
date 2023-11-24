@@ -10,10 +10,18 @@ const ENDPOINT = "https://qtify-backend-labs.crio.do";
 function App() {
   const [topAlbum, setTopAlbums] = useState([]);
   const [newAlbum, setNewAlbums] = useState([]);
+  const [genres, setGenres] = useState([]);
+  const [songs, setSongs] = useState([]);
 
   useEffect(() => {
     topAlbumData();
     newAlbumData();
+    getGenres();
+
+    (async () => {
+      const data = await setAllSongs();
+      setSongs(data);
+    })();
   }, []);
 
   const topAlbumData = async () => {
@@ -34,14 +42,49 @@ function App() {
     }
   };
 
+  const getGenres = async () => {
+    try {
+      let res = await axios.get(`${ENDPOINT}/genres`);
+      setGenres(res.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // const setAllSongs = async () => {
+  //   try {
+  //     let res = await axios.get(`${ENDPOINT}/songs`);
+  //     setSongs(res.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  // console.log(songs);
   return (
     <>
       <Navbar />
       <HeroSection />
-      <Section title="Top Albums" Data={topAlbum} id="1" />
-      <Section title="New Albums" Data={newAlbum} id="2" />
+      <Section title="Top Albums" Data={topAlbum} id="1" tabView={false} />
+      <Section title="New Albums" Data={newAlbum} id="2" tabView={false} />
+      <Section
+        title="Songs"
+        Data={songs}
+        id="3"
+        tabView={true}
+        genresData={genres}
+      />
     </>
   );
 }
+
+export const setAllSongs = async () => {
+  try {
+    let res = await axios.get(`${ENDPOINT}/songs`);
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export default App;

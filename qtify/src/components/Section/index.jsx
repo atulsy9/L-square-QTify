@@ -2,8 +2,9 @@ import "./section.css";
 import Card from "../Card";
 import { useState } from "react";
 import Carousel from "../Carousel";
+import TabView from "../TabView";
 // eslint-disable-next-line import/no-anonymous-default-export
-export default ({ title, Data, id }) => {
+export default ({ title, Data, id, tabView, genresData }) => {
   const [showBtn, setshowBtn] = useState(true);
   return (
     <div className="albumGrid">
@@ -14,22 +15,22 @@ export default ({ title, Data, id }) => {
             setshowBtn(!showBtn);
           }}
         >
-          {showBtn ? "Show all" : "Collapse"}
+          {!tabView ? (showBtn ? "Show all" : "Collapse") : null}
         </div>
       </div>
       {showBtn ? (
-        <Carousel data={Data} id={id} />
+        <>
+          {tabView ? (
+            <TabView id={id} genresData={genresData} />
+          ) : (
+            <Carousel data={Data} id={id} />
+          )}
+        </>
       ) : (
         <div className="card-component">
+          {console.log(Data)}
           {Data.map((cardData) => {
-            return (
-              <Card
-                key={cardData.id}
-                imgsrc={cardData.image}
-                follows={cardData.follows}
-                title={cardData.title}
-              />
-            );
+            return <Card data={cardData} />;
           })}
         </div>
       )}
