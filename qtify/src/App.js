@@ -4,6 +4,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import Section from "./components/Section";
+import FAQsection from "./components/FAQsection";
 
 const ENDPOINT = "https://qtify-backend-labs.crio.do";
 
@@ -62,7 +63,7 @@ function App() {
 
   // console.log(songs);
   return (
-    <>
+    <div style={{ backgroundColor: "#121212" }}>
       <Navbar />
       <HeroSection />
       <Section title="Top Albums" Data={topAlbum} id="1" tabView={false} />
@@ -74,7 +75,8 @@ function App() {
         tabView={true}
         genresData={genres}
       />
-    </>
+      <FAQsection />
+    </div>
   );
 }
 
@@ -84,6 +86,7 @@ export const setAllSongs = async () => {
     return res.data;
   } catch (error) {
     console.log(error);
+    return [];
   }
 };
 

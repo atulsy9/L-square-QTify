@@ -1,0 +1,27 @@
+.faqSection {
+  height: 345px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  color: var(--css-white);
+  margin-top: 32px;
+}
+
+.faqHeading {
+  font-weight: 600;
+  font-size: 50px;
+}
+
+.faqAccordion {
+  font-weight: 500;
+  font-size: 20px;
+  min-width: 1135px;
+  color: var(--css-white);
+  background-color: var(--css-black);
+}
+
+.outerSectionAcc {
+  border: 1px soild var(--css-white);
+  border-radius: 10px;
+}

@@ -28,7 +28,7 @@ export default ({ title, Data, id, tabView, genresData }) => {
         </>
       ) : (
         <div className="card-component">
-          {console.log(Data)}
+          {/* {console.log(Data)} */}
           {Data.map((cardData) => {
             return <Card data={cardData} />;
           })}
