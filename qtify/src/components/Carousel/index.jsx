@@ -1,6 +1,7 @@
 import "./Carousel.css";
 import { Virtual, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Tooltip from "@mui/material/Tooltip";
 
 // Import Swiper styles
 import "swiper/css";
@@ -24,7 +25,9 @@ export default ({ data, id, view }) => {
       >
         {data.map((cardData) => (
           <SwiperSlide key={cardData.id}>
-            <Card data={cardData} view={view} />
+            <Tooltip title="Delete">
+              <Card data={cardData} view={view} />
+            </Tooltip>
           </SwiperSlide>
         ))}
       </Swiper>
